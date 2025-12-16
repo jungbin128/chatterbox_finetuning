@@ -4,7 +4,6 @@
 본 저장소는 **Chatterbox 공식 TTS 모델**을 기반으로 한국어 음성 생성을 위해 파인튜닝을 수행한 코드와 실험 파이프라인을 포함한다.  
 Emilia Dataset의 한국어 semantic token을 활용하여 semantic-level 파인튜닝을 수행하고, 파인튜닝된 모델(`final.pt`)을 이용해 한국어 음성을 생성한다.
 
----
 
 ## Overall Pipeline
 
@@ -21,7 +20,6 @@ Emilia Dataset의 한국어 semantic token을 활용하여 semantic-level 파인
    - 파인튜닝된 `final.pt`를 로드하여 한국어 음성 생성
    - 필요 시 speaker reference(`voice_sample.wav`)를 활용한 보이스 클로닝 수행
 
----
 
 ## What is included
 
@@ -31,7 +29,6 @@ Emilia Dataset의 한국어 semantic token을 활용하여 semantic-level 파인
 - Chatterbox 공식 inference 코드와 결합한 음성 생성
 - Optional speaker reference 기반 voice cloning
 
----
 
 ## My Environment
 
@@ -41,7 +38,6 @@ Emilia Dataset의 한국어 semantic token을 활용하여 semantic-level 파인
 - Persistent Volume 기반 작업 디렉토리
 - PyTorch 기반 학습 및 추론
 
----
 
 ## Environment Setup
 
@@ -70,7 +66,6 @@ pip install -e .
 의존성 버전의 일관성을 보장하기 위해 pyproject.toml에 각 패키지의 버전이 고정되어 있습니다.  
 이 설치 모드에서는 코드나 의존성을 자유롭게 수정할 수 있습니다.
 
----
 
 ## Fine-tuning  
 
@@ -83,7 +78,6 @@ Dataset
   
 데이터 로딩은 dataset_loader_emilia.py에서 수행된다.
 
----
 
 ## Training Execution
 
@@ -101,7 +95,6 @@ python finetune_t3_ko.py
 ckpt/final.pt
 ```
 
----
 
 ## Inference (Speech Generation)
 
@@ -120,7 +113,6 @@ python inference_semantic.py
 output_ko.wav
 ```
 
----
 
 ## Speaker Reference (Voice Cloning)
 
@@ -131,7 +123,6 @@ voice_sample.wav 파일은 speaker reference로 사용된다.
 다만, 본 프로젝트에서는 voice cloning 실험을 포함하는 것을 요구사항으로 두었기 때문에
 README 및 실험 구성에는 speaker reference 사용을 포함하여 설명한다.
 
----
 
 ## CLI Inference (inference_tts.py)
 
@@ -183,10 +174,9 @@ python inference_tts.py \
 - `--checkpoint` 제공 시 ChatterboxTTS + finetuned weights 로드
 - 파인튜닝된 체크포인트(final.pt)는 한국어에 최적화되어 있음
 
----
-
 ## Citation
 
+```bibtex
 @misc{chatterboxtts2025,
   author       = {{Resemble AI}},
   title        = {{Chatterbox-TTS}},
@@ -194,3 +184,4 @@ python inference_tts.py \
   howpublished = {\url{https://github.com/resemble-ai/chatterbox}},
   note         = {GitHub repository}
 }
+```
