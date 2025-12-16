@@ -63,8 +63,12 @@ sudo apt install ffmpeg
 ### 3. Python 패키지 설치
 
 ```
-pip install -r requirements.txt
+git clone https://github.com/resemble-ai/chatterbox.git
+cd chatterbox
+pip install -e .
 ```
+의존성 버전의 일관성을 보장하기 위해 pyproject.toml에 각 패키지의 버전이 고정되어 있습니다.  
+이 설치 모드에서는 코드나 의존성을 자유롭게 수정할 수 있습니다.
 
 ---
 
