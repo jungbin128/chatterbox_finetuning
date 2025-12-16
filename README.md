@@ -11,7 +11,7 @@ Emilia Dataset의 한국어 semantic token을 활용하여 semantic-level 파인
 본 레포에서의 전체 파이프라인은 다음과 같다.
 
 1. `dataset_loader_emilia.py`  
-   - Emilia Dataset에서 한국어(KR) semantic token 스트리밍 로드
+   - Emilia Dataset (https://huggingface.co/datasets/amphion/Emilia-Dataset) 에서 한국어(KR) semantic token 스트리밍 로드
 
 2. `finetune_t3_ko.py`  
    - 한국어 semantic token을 사용한 T3 모델 파인튜닝
@@ -97,9 +97,6 @@ python finetune_t3_ko.py
 ckpt/final.pt
 ```
 
-final.pt는 항상 finetune_t3_ko.py가 실행된 디렉토리 기준의 ckpt/ 하위에 저장되도록 고정되어 있다.  
-(경로를 인자로 변경하는 구조는 아니다.)
-
 ---
 
 ## Inference (Speech Generation)
@@ -123,7 +120,7 @@ output_ko.wav
 
 ## Speaker Reference (Voice Cloning)
 
-voice_sample.wav 파일은 optional speaker reference로 사용된다.  
+voice_sample.wav 파일은 speaker reference로 사용된다.  
 - 코드 레벨에서는 필수 요소는 아니며,
 - 제거하더라도 파인튜닝 및 inference는 정상 동작한다.
   
